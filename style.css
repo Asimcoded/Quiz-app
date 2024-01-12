@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+    --black: #000;
+    --text: #fff;
+    --primary-cr: #C04CFD;
+    --bg: #220135;
+    --bg-light: #FBFAFF;
+    --mixed: #3D1F58;
+    --mixed-light: #fbeeff;
+    --grey-text:#A7A7A7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Varela Round', sans-serif;
+    background-color: var(--bg);
+    padding: 2rem;
+}
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.category-title{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.category-title span{
+    font-size: 25px;
+    color: var(--text);
+}
+.toggle-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.toggle-area img{
+    width: 30px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black);
+    border-radius: 30px;
+    transition: .2s;
+}
+.slider::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    left: 3px;
+    transition: all .2s;
+}
+input:checked + .slider{
+    background-color: var(--primary-cr);
+}
+input:focus + .slider{
+    box-shadow: 0 0 2px var(--primary-cr);
+}
+input:checked + .slider::before{
+    transform: translate(24px ,-50%);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 20px;
+}
+.container > *{
+    flex: 1;
+}
+.title-box h1{
+    color: var(--text);
+    font-weight: 400;
+    font-size: 40px;
+}
+.title-box .title{
+    color: var(--primary-cr);
+    font-size: 45px;
+}
+.title-box p{
+    color: var(--grey-text);
+    font-size: 25px;
+    margin-top: 40px;
+}
+li{
+    width: 100%;
+    /* max-width: 600px; */
+    padding: 15px;
+    color: var(--text);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--mixed);
+    margin-top: 25px;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+li:hover{
+    transform: scale(.98);
+}
+li span{
+    color: var(--text);
+    font-size: 25px;
+}
+.progress-bar{
+    width: 100%;
+    height: 20px;
+    background-color: var(--mixed);
+    border-radius: 20px;
+    margin: 20px 0;
+}
+.progress-bar .progress{
+    width: 10%;
+    height: 20px;
+    background-color: var(--primary-cr);
+    border-radius: 20px;
+    
+}
+
+.index{
+    font-size: 25px;
+    color: var(--primary-cr);
+    width: 45px;
+    height: 45px;
+    background-color:#fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+}
+.optionBox > li{
+    margin-top: 0;
+}
+.selected{
+    background-color: var(--primary-cr);
+    box-shadow: 0px 0px 5px 5px #7e03c0;
+}
+.error{
+    font-size: 20px;
+    color: var(--grey-text);
+    text-align: center;
+    padding: 10px;
+}
+.btn{
+    width: 100%;
+    /* max-width: 600px; */
+    padding: 15px;
+    color: var(--text);
+    gap: 20px;
+    background-color: var(--primary-cr);
+    margin-top: 25px;
+    border-radius: 10px;
+    transition: .3s;
+    border: 0;
+    font-size: 20px;
+    font-family: Varela Round;  
+    cursor: pointer;  
+}
+.btn:hover{
+    scale: .98;
+}
+.score-box{
+    background-color: var(--mixed);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+.score-box h1{
+    margin: 20px 0;
+    color: var(--text);
+    font-size: 45px;
+    font-weight: 500;
+}
+.score-box > P{
+    color: var(--grey-text);
+    font-size: 25px;
+}
+@media(max-width:800px){
+    .container{
+        display: grid;
+    }
+    body{
+        padding: .2rem;
+    }
+    .title-box h1{
+        font-size: 35px;
+    }
+    .title-box .title{
+        font-size: 38px;  
+    }
+    .title-box p{
+        font-size: 20px;
+    }
+    li span{
+        font-size: 20px;
+    }
+    .progress-bar{
+        height: 15px;
+    }
+    .progress-bar .progress{
+        height: 15px;
+    }
+}
+@media(max-width:380px){
+    header{
+        flex-direction: column-reverse;
+    }
+}
