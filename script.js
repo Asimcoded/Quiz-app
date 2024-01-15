@@ -130,9 +130,7 @@ function checkAnswer(){
     checkBtn.disabled = true;
     let text = document.createElement("p");
     if(!optionList.querySelector(".selected")){
-        text.className = "error";
-        text.innerHTML = "Please select an option"
-        optionList.appendChild(text)
+    
         checkBtn.disabled = false
     }
     else{

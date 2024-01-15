@@ -190,7 +190,7 @@ li span{
     border: 0;
     font-size: 20px;
     font-family: Varela Round;  
-    cursor: pointer;  
+    cursor:pointer;  
 }
 .btn:hover{
     scale: .98;
